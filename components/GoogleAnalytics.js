@@ -2,20 +2,23 @@ import React from "react";
 import Script from "next/script";
 
 const GoogleAnalytics = () => {
+  const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
+
   return (
     <>
-       
-<Script async src="https://www.googletagmanager.com/gtag/js?id=G-DQL44FY2BK"></Script>
-<Script id="script">
-  
-  {`
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments)}
-  gtag('js', new Date());
-
-  gtag('config', 'G-DQL44FY2BK');
-`}
-</Script>
+      <Script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_ID}');
+        `}
+      </Script>
     </>
   );
 };
