@@ -11,7 +11,7 @@ Smart Inventory Management System is a web application designed to help users ma
 ## Preview
 
 Visit The Following Link For Live Preview
-<a href="" style="height: 30px width: 200px,
+<a href="https://smart-inventory-six.vercel.app/" style="height: 30px width: 200px,
           border: 2px solid #1976d2,
           display: flex,
           alignItems: center,
